@@ -1,0 +1,39 @@
+TASK 1 Outputs:
+
+1. DDL for each table 
+
+    -select column_name, data_type, character_maximum_length, column_default, is_nullable from INFORMATION_SCHEMA.COLUMNS where table_name = 'vote_share2';
+    OUTPUT:
+        "ridingnumber"	"integer"			"NO"
+        "ridingname_en"	"character varying"	255		"NO"
+        "ridingname_fr"	"character varying"	255		"NO"
+        "totalvotes"	"integer"			"NO"
+        "turnout"	"numeric"			"YES"
+        "con"	"numeric"			"YES"
+        "lib"	"numeric"			"YES"
+        "ndp"	"numeric"			"YES"
+        "grn"	"numeric"			"YES"
+        "bq"	"numeric"			"YES"
+        "ppc"	"numeric"			"YES"
+    
+    -select column_name, data_type, character_maximum_length, column_default, is_nullable from INFORMATION_SCHEMA.COLUMNS where table_name = 'candidates2';
+
+    OUTPUT:
+    "ridingnumber"	"integer"			"NO"
+    "lib"	"character varying"	255		"YES"
+    "ndp"	"character varying"	255		"YES"
+    "con"	"character varying"	255		"YES"
+    "grn"	"character varying"	255		"YES"
+    "bq"	"character varying"	255		"YES"
+    "ppc"	"character varying"	255		"YES"
+
+
+2. Table columns were given in the question
+
+3. The Python scrip is divided into 3 modules
+    - data_collection : contains functions used to extract data and process it for data entry
+    - db_connect : contains functions to get db connection, create tables and load data in tables
+    - source : runner file, which executes all commands for end to end implementation
+
+NOTE : 
+SQL queries can be found in "sql" folder containing 4 files.
